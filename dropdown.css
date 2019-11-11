@@ -1,0 +1,19 @@
+[data-its-dropdown] {
+  display: flex;
+  flex-direction: column;
+  background: green;
+  width: fit-content;
+  height: fit-content;
+}
+
+[data-its-dropdown-name] {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: yellow;
+}
+
+[data-its-dropdown-item] {
+  margin: 10px;
+}
