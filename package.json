@@ -1,0 +1,23 @@
+{
+  "name": "@intothesource/dropdown",
+  "version": "1.0.0",
+  "description": "Material style dropdown",
+  "main": "dropdown.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/intothesource/dropdown.git"
+  },
+  "keywords": [
+    "material",
+    "dropdown"
+  ],
+  "author": "Ramon Valk",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/intothesource/dropdown/issues"
+  },
+  "homepage": "https://github.com/intothesource/dropdown#readme"
+}
