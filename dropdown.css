@@ -1,17 +1,28 @@
 [data-its-dropdown] {
   display: flex;
+  position: relative;
   flex-direction: column;
   background: green;
-  width: fit-content;
+  width: max-content;
   height: fit-content;
+  max-height: 200px;
+  overflow: scroll;
+  width: fit-content;
+  border-radius: 5px;
+  background: #222537;
 }
 
 [data-its-dropdown-name] {
-  position: absolute;
   display: flex;
-  justify-content: center;
   align-items: center;
   color: yellow;
+  position: relative;
+}
+
+[data-its-dropdown-items] {
+  position: absolute;
+  right: 0;
+  display: flex;
 }
 
 [data-its-dropdown-item] {

@@ -2,37 +2,39 @@ class Dropdown extends HTMLElement {
 
     setAttributes() {
         this.setAttribute('data-its-dropdown', '');
-        this.setItemAttributes('data-its-dropdown-item');
+        this.setItemAttributes('data-its-dropdown-item', this.children);
     }
 
-    setItemAttributes(attributeName) {
-        let childElements = this.children;
+    // setItemAttributes(itemAttribute, items) {
+    //     if (items.children.length) {
+    //         console.log('hallo');
+    //         for (let index = 0; items.children.length > index; index++) {
+    //             items.children[index].setAttribute(itemAttribute, '');
+    //         }
+    //     }
+    // }
+
+    setItemAttributes(attributeName, childElements) {
         for (let item = 0; item < childElements.length; item++) {
-            if (childElements[item].attributes.length > 0) {
-                let familiarAttribute = false;
-                for (let attribute = 0; attribute < childElements[item].attributes.length; attribute++) {
-                    switch (childElements[item].attributes[attribute].name) {
-                        case 'data-its-dropdown-name':
-                            familiarAttribute = true;
-                            break;
-                        default:
-                            break;
-                    }
-                }
-                if (!familiarAttribute) {
-                    childElements[item].setAttribute(attributeName, '');
-                }
-            } else {
-                childElements[item].setAttribute(attributeName, '');
-            }
+            childElements[item].setAttribute(attributeName, '');
+        }
+    }
+
+    setTitle() {
+        if (this.attributes.label) {
+            const titleElement = document.createElement('p');
+            const textElement = document.createTextNode(this.attributes.label.value);
+            titleElement.appendChild(textElement);
+            titleElement.setAttribute('data-its-dropdown-label', '');
+            this.parentNode.insertBefore(titleElement, this);
         }
     }
 
     constructor() {
         super();
         this.setAttributes();
-        const titleElement = this.querySelector('data-its-dropdown-name');
-        const itemElements = this.querySelectorAll('data-its-dropdown-item');
+        const itemElements = this.querySelectorAll('[data-its-dropdown-item]');
+        this.setTitle();
         console.log(this.children, titleElement, itemElements);
     }
 }
