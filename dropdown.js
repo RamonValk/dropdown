@@ -10,9 +10,10 @@ class Dropdown extends HTMLElement {
             this.setItems();
             this.setLabel();
             this.setIcon();
-
+            this.setStyleSheet();
             this.dropdownOpenController();
             this.dropdownAlignmentController();
+
         }, 100);
     }
 
@@ -20,6 +21,7 @@ class Dropdown extends HTMLElement {
         const linkElement = document.createElement('link');
         linkElement.setAttribute('rel', 'stylesheet');
         linkElement.setAttribute('href', 'dropdown.css');
+        document.head.appendChild(linkElement);
     }
 
     setAttributes() {
