@@ -5,12 +5,15 @@ class Dropdown extends HTMLElement {
     constructor() {
         let visibile = false;
         super();
-        this.setAttributes();
-        this.setItems();
-        this.setLabel();
-        this.setIcon();
-        this.dropdownOpenController();
-        this.dropdownAlignmentController();
+        setTimeout(() => {
+            this.setAttributes();
+            this.setItems();
+            this.setLabel();
+            this.setIcon();
+
+            this.dropdownOpenController();
+            this.dropdownAlignmentController();
+        }, 100);
     }
 
     setAttributes() {
