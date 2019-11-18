@@ -2,10 +2,20 @@
   "name": "@intothesource/dropdown",
   "version": "1.0.0",
   "description": "Material style dropdown",
+  "private": false,
   "main": "dropdown.js",
+  "module": "dropdown.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
+  "publishConfig": {
+    "access": "public"
+  },
+  "files": [
+    "dropdown.js",
+    "icons.js",
+    "dropdown.css"
+  ],
   "repository": {
     "type": "git",
     "url": "git+https://github.com/intothesource/dropdown.git"
