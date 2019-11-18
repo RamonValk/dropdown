@@ -36,7 +36,6 @@ class Dropdown extends HTMLElement {
     setIcon() {
         const titleElement = this.querySelector('[data-its-dropdown-label]');
         if (titleElement) {
-            console.log(chevron());
             titleElement.appendChild(chevron());
         }
     }
@@ -73,8 +72,8 @@ class Dropdown extends HTMLElement {
         });
 
         const startOutsideClickListener = () => {
-            document.addEventListener('click', (e) => {
-                if (!this.contains(e.target)) {
+            document.addEventListener('click', clickEvent => {
+                if (!this.contains(clickEvent.target)) {
                     this.visibile = false;
                     this.hideItems();
                     this.rotateIconClose();
@@ -84,8 +83,8 @@ class Dropdown extends HTMLElement {
         }
 
         const startEscListener = () => {
-            document.addEventListener('keyup', (e) => {
-                if (e.key.toLowerCase() === 'escape') {
+            document.addEventListener('keyup', keyUpEvent => {
+                if (keyUpEvent.key.toLowerCase() === 'escape') {
                     this.visibile = false;
                     this.hideItems();
                     this.rotateIconClose();
