@@ -2,6 +2,17 @@ import { chevron } from './icons.js';
 
 class Dropdown extends HTMLElement {
 
+    constructor() {
+        let visibile = false;
+        super();
+        this.setAttributes();
+        this.setItems();
+        this.setLabel();
+        this.setIcon();
+        this.dropdownOpenController();
+        this.dropdownAlignmentController();
+    }
+
     setAttributes() {
         this.setAttribute('data-its-dropdown', '');
         this.setItemAttributes('data-its-dropdown-item', this.children);
@@ -116,17 +127,6 @@ class Dropdown extends HTMLElement {
             setItemsAlignment();
         })
         setItemsAlignment();
-    }
-
-    constructor() {
-        let visibile = false;
-        super();
-        this.setAttributes();
-        this.setItems();
-        this.setLabel();
-        this.setIcon();
-        this.dropdownOpenController();
-        this.dropdownAlignmentController();
     }
 }
 window.customElements.define('its-dropdown', Dropdown);
