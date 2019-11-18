@@ -16,6 +16,12 @@ class Dropdown extends HTMLElement {
         }, 100);
     }
 
+    setStyleSheet() {
+        const linkElement = document.createElement('link');
+        linkElement.setAttribute('rel', 'stylesheet');
+        linkElement.setAttribute('href', 'dropdown.css');
+    }
+
     setAttributes() {
         this.setAttribute('data-its-dropdown', '');
         this.setItemAttributes('data-its-dropdown-item', this.children);
