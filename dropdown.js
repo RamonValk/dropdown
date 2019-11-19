@@ -125,6 +125,7 @@ class Dropdown extends HTMLElement {
         const setItemsAlignment = () => {
             const labelDimensions = this.querySelector('[data-its-dropdown-label]').getBoundingClientRect();
             const itemsDimensions = this.querySelector('[data-its-dropdown-items]').getBoundingClientRect();
+            console.log('BEFORE Label left: ', labelDimensions.left, '; Items left: ', itemsDimensions.left, '; Label width: ', labelDimensions.width);
             // Calculate minimum space needed before items go off screen
             if (labelDimensions.left < (itemsDimensions.width - labelDimensions.width)) {
                 // If there is not enough space for items align them left against label
@@ -133,10 +134,14 @@ class Dropdown extends HTMLElement {
                 // If there is enough space align them right against label by setting label.left - label.width
                 this.querySelector('[data-its-dropdown-items]').style.left = `${labelDimensions.left - labelDimensions.width}px`;
             }
+            setTimeout(() => {
+                console.log('AFTER Label left: ', labelDimensions.left, '; Items left: ', this.querySelector('[data-its-dropdown-items]').getBoundingClientRect().left, '; Label width: ', labelDimensions.width);
+            }, 500);
         }
-        const updateItemsAlignment = window.addEventListener('resize', () => {
+        const updateItemsAlignmentOnResize = window.addEventListener('resize', () => {
             setItemsAlignment();
-        })
+        });
+        // const updateItemsAlignmentOn
         setItemsAlignment();
     }
 }
