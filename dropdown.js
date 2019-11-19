@@ -10,19 +10,19 @@ class Dropdown extends HTMLElement {
             this.setItems();
             this.setLabel();
             this.setIcon();
-            this.setStyleSheet();
+            // this.setStyleSheet();
             this.dropdownOpenController();
             this.dropdownAlignmentController();
 
-        }, 100);
+        });
     }
 
-    setStyleSheet() {
-        const linkElement = document.createElement('link');
-        linkElement.setAttribute('rel', 'stylesheet');
-        linkElement.setAttribute('href', 'dropdown.css');
-        document.head.appendChild(linkElement);
-    }
+    // setStyleSheet() {
+    //     const linkElement = document.createElement('link');
+    //     linkElement.setAttribute('rel', 'stylesheet');
+    //     linkElement.setAttribute('href', 'dropdown.css');
+    //     document.head.appendChild(linkElement);
+    // }
 
     setAttributes() {
         this.setAttribute('data-its-dropdown', '');
