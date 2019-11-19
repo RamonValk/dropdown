@@ -132,7 +132,7 @@ class Dropdown extends HTMLElement {
                 this.querySelector('[data-its-dropdown-items]').style.left = labelDimensions.left;
             } else {
                 // If there is enough space align them right against label by setting label.left - label.width
-                this.querySelector('[data-its-dropdown-items]').style.left = `${labelDimensions.left - labelDimensions.width}px`;
+                this.querySelector('[data-its-dropdown-items]').style.left = `${(labelDimensions.left + labelDimensions.width) - itemsDimensions.width}px`;
             }
             setTimeout(() => {
                 console.log('AFTER Label left: ', labelDimensions.left, '; Items left: ', this.querySelector('[data-its-dropdown-items]').getBoundingClientRect().left, '; Label width: ', labelDimensions.width);
