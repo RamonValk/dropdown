@@ -14,7 +14,6 @@ class Dropdown extends HTMLElement {
             // this.setStyleSheet();
             this.dropdownOpenController();
             this.dropdownAlignmentController();
-
         });
     }
 

@@ -26,10 +26,12 @@
   overflow: scroll;
   width: fit-content;
   border-radius: 5px;
+  pointer-events: none;
 }
 
 [data-its-dropdown-items].active {
   opacity: 1;
+  pointer-events: auto;
 }
 
 [data-its-dropdown-item] {
